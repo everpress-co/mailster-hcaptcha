@@ -102,7 +102,9 @@ class MailsterHCaptcha {
 
 		$html = '<div class="mailster-wrapper mailster-_recaptcha-wrapper"><div class="h-captcha" data-sitekey="' . esc_attr( mailster_option( 'hCaptcha_public' ) ) . '" data-theme="' . mailster_option( 'hCaptcha_theme', 'light' ) . '" data-size="' . mailster_option( 'hCaptcha_size', 'normal' ) . '"></div></div>';
 
-		wp_print_scripts( 'mailster_hcaptcha_script' );
+		if ( did_action( 'mailster_form' ) ) {
+			wp_print_scripts( 'mailster_recaptcha_script' );
+		}
 		return $html;
 
 	}
