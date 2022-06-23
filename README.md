@@ -3,7 +3,7 @@
 Contributors: everpress  
 Tags: mailster, form, hcaptcha, recaptcha, captcha, secure  
 Requires at least: 3.8  
-Tested up to: 5.9  
+Tested up to: 6.0  
 Stable tag: 1.1  
 License: GPLv2 or late
 
