@@ -1,11 +1,11 @@
 # Mailster hCaptcha
 
-Contributors: everpress  
+Contributors: everpress, xaverb  
 Tags: mailster, form, hcaptcha, recaptcha, captcha, secure  
 Requires at least: 3.8  
 Tested up to: 6.0  
 Stable tag: 1.1  
-License: GPLv2 or late
+License: GPLv2 or later
 
 ## Description
 
@@ -25,7 +25,6 @@ You may also try [Mailster Cool Captcha for Forms](https://wordpress.org/plugins
 
 ![Option Interface.](https://ps.w.org/mailster-hcaptcha/assets/screenshot-1.png)
 
-
 ## Changelog
 
 ### 1.1
@@ -38,4 +37,4 @@ You may also try [Mailster Cool Captcha for Forms](https://wordpress.org/plugins
 
 ## Additional Info
 
-This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=Mailster+hCaptcha&utm_medium=readme)
+This Plugin requires [Mailster Newsletter Plugin for WordPress](https://mailster.co/?utm_campaign=wporg&utm_source=wordpress.org&utm_medium=readme&utm_term=hCaptcha)
