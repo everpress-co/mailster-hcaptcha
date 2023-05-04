@@ -9,7 +9,7 @@
 		</tr>
 		<tr valign="top">
 			<th scope="row"><?php esc_html_e( 'Secret Key', 'mailster-hcaptcha' ); ?></th>
-			<td><p><input type="text" name="mailster_options[hCaptcha_private]" value="<?php echo esc_attr( mailster_option( 'hCaptcha_private' ) ); ?>" class="large-text"></p></td>
+			<td><p><input type="password" name="mailster_options[hCaptcha_private]" value="<?php echo esc_attr( mailster_option( 'hCaptcha_private' ) ); ?>" class="large-text"></p></td>
 		</tr>
 		<tr valign="top">
 			<th scope="row"><?php esc_html_e( 'Error Message', 'mailster-hcaptcha' ); ?></th>
@@ -41,58 +41,122 @@
 			<td><select name="mailster_options[hCaptcha_language]">
 				<?php
 				$languages = array(
-					'0'      => esc_html__( 'detect automatically', 'mailsterr-hcaptcha' ),
-					'ar'     => 'Arabic',
-					'bg'     => 'Bulgarian',
-					'ca'     => 'Catalan',
-					'zh-CN'  => 'Chinese (Simplified)',
-					'zh-TW'  => 'Chinese (Traditional)',
-					'hr'     => 'Croatian',
-					'cs'     => 'Czech',
-					'da'     => 'Danish',
-					'nl'     => 'Dutch',
-					'en-GB'  => 'English (UK)',
-					'en'     => 'English (US)',
-					'fil'    => 'Filipino',
-					'fi'     => 'Finnish',
-					'fr'     => 'French',
-					'fr-CA'  => 'French (Canadian)',
-					'de'     => 'German',
-					'de-AT'  => 'German (Austria)',
-					'de-CH'  => 'German (Switzerland)',
-					'el'     => 'Greek',
-					'iw'     => 'Hebrew',
-					'hi'     => 'Hindi',
-					'hu'     => 'Hungarain',
-					'id'     => 'Indonesian',
-					'it'     => 'Italian',
-					'ja'     => 'Japanese',
-					'ko'     => 'Korean',
-					'lv'     => 'Latvian',
-					'lt'     => 'Lithuanian',
-					'no'     => 'Norwegian',
-					'fa'     => 'Persian',
-					'pl'     => 'Polish',
-					'pt'     => 'Portuguese',
-					'pt-BR'  => 'Portuguese (Brazil)',
-					'pt-PT'  => 'Portuguese (Portugal)',
-					'ro'     => 'Romanian',
-					'ru'     => 'Russian',
-					'sr'     => 'Serbian',
-					'sk'     => 'Slovak',
-					'sl'     => 'Slovenian',
-					'es'     => 'Spanish',
-					'es-419' => 'Spanish (Latin America)',
-					'sv'     => 'Swedish',
-					'th'     => 'Thai',
-					'tr'     => 'Turkish',
-					'uk'     => 'Uk rainian',
-					'vi'     => 'Vietnamese',
+					'0'     => esc_html__( 'detect automatically', 'mailsterr-hcaptcha' ),
+					'af'    => 'Afrikaans',
+					'sq'    => 'Albanian',
+					'am'    => 'Amharic',
+					'ar'    => 'Arabic',
+					'hy'    => 'Armenian',
+					'az'    => 'Azerbaijani',
+					'eu'    => 'Basque',
+					'be'    => 'Belarusian',
+					'bn'    => 'Bengali',
+					'bg'    => 'Bulgarian',
+					'bs'    => 'Bosnian',
+					'my'    => 'Burmese',
+					'ca'    => 'Catalan',
+					'ceb'   => 'Cebuano',
+					'zh'    => 'Chinese',
+					'zh-CN' => 'Chinese Simplified',
+					'zh-TW' => 'Chinese Traditional',
+					'co'    => 'Corsican',
+					'hr'    => 'Croatian',
+					'cs'    => 'Czech',
+					'da'    => 'Danish',
+					'nl'    => 'Dutch',
+					'en'    => 'English',
+					'eo'    => 'Esperanto',
+					'et'    => 'Estonian',
+					'fa'    => 'Farsi',
+					'fi'    => 'Finnish',
+					'fr'    => 'French',
+					'fy'    => 'Frisian',
+					'gd'    => 'Gaelic',
+					'gl'    => 'Galacian',
+					'ka'    => 'Georgian',
+					'de'    => 'German',
+					'el'    => 'Greek',
+					'gu'    => 'Gujurati',
+					'ht'    => 'Haitian',
+					'ha'    => 'Hausa',
+					'haw'   => 'Hawaiian',
+					'he'    => 'Hebrew',
+					'hi'    => 'Hindi',
+					'hmn'   => 'Hmong',
+					'hu'    => 'Hungarian',
+					'is'    => 'Icelandic',
+					'ig'    => 'Igbo',
+					'id'    => 'Indonesian',
+					'ga'    => 'Irish',
+					'it'    => 'Italian',
+					'ja'    => 'Japanese',
+					'jw'    => 'Javanese',
+					'kn'    => 'Kannada',
+					'kk'    => 'Kazakh',
+					'km'    => 'Khmer',
+					'rw'    => 'Kinyarwanda',
+					'ky'    => 'Kirghiz',
+					'ko'    => 'Korean',
+					'ku'    => 'Kurdish',
+					'lo'    => 'Lao',
+					'la'    => 'Latin',
+					'lv'    => 'Latvian',
+					'lt'    => 'Lithuanian',
+					'lb'    => 'Luxembourgish',
+					'mk'    => 'Macedonian',
+					'mg'    => 'Malagasy',
+					'ms'    => 'Malay',
+					'ml'    => 'Malayalam',
+					'mt'    => 'Maltese',
+					'mi'    => 'Maori',
+					'mr'    => 'Marathi',
+					'mn'    => 'Mongolian',
+					'ne'    => 'Nepali',
+					'no'    => 'Norwegian',
+					'ny'    => 'Nyanja',
+					'or'    => 'Oriya',
+					'fa'    => 'Persian',
+					'pl'    => 'Polish',
+					'pt'    => 'Portuguese',
+					'ps'    => 'Pashto',
+					'pa'    => 'Punjabi',
+					'ro'    => 'Romanian',
+					'ru'    => 'Russian',
+					'sm'    => 'Samoan',
+					'sn'    => 'Shona',
+					'sd'    => 'Sindhi',
+					'si'    => 'Singhalese',
+					'sr'    => 'Serbian',
+					'sk'    => 'Slovak',
+					'sl'    => 'Slovenian',
+					'so'    => 'Somani',
+					'st'    => 'Southern Sotho',
+					'es'    => 'Spanish',
+					'su'    => 'Sundanese',
+					'sw'    => 'Swahili',
+					'sv'    => 'Swedish',
+					'tl'    => 'Tagalog',
+					'tg'    => 'Tajik',
+					'ta'    => 'Tamil',
+					'tt'    => 'Tatar',
+					'te'    => 'Teluga',
+					'th'    => 'Thai',
+					'tr'    => 'Turkish',
+					'tk'    => 'Turkmen',
+					'ug'    => 'Uyghur',
+					'uk'    => 'Ukrainian',
+					'ur'    => 'Urdu',
+					'uz'    => 'Uzbek',
+					'vi'    => 'Vietnamese',
+					'cy'    => 'Welsh',
+					'xh'    => 'Xhosa',
+					'yi'    => 'Yiddish',
+					'yo'    => 'Yoruba',
+					'zu'    => 'Zulu',
 				);
-
-				$current = mailster_option( 'hCaptcha_language' );
+				$current   = mailster_option( 'hCaptcha_language' );
 				foreach ( $languages as $key => $name ) {
-					echo '<option value="' . $key . '" ' . ( selected( $key, $current, false ) ) . '>' . $name . '</option>';
+					echo '<option value="' . esc_attr( $key ) . '" ' . ( selected( $key, $current, false ) ) . '>' . esc_html( $name ) . '</option>';
 				}
 
 				?>
@@ -108,7 +172,7 @@
 				);
 					$current = mailster_option( 'hCaptcha_theme' );
 				foreach ( $themes as $key => $name ) {
-					echo '<option value="' . $key . '" ' . ( selected( $key, $current, false ) ) . '>' . $name . '</option>';
+					echo '<option value="' . esc_attr( $key ) . '" ' . ( selected( $key, $current, false ) ) . '>' . esc_html( $name ) . '</option>';
 				}
 				?>
 			</select></td>
@@ -118,12 +182,13 @@
 			<td><select name="mailster_options[hCaptcha_size]">
 				<?php
 				$sizes   = array(
-					'normal'  => esc_html__( 'Normal', 'mailster-hcaptcha' ),
-					'compact' => esc_html__( 'Compact', 'mailster-hcaptcha' ),
+					'normal'    => esc_html__( 'Normal', 'mailster-hcaptcha' ),
+					'compact'   => esc_html__( 'Compact', 'mailster-hcaptcha' ),
+					'invisible' => esc_html__( 'Invisible', 'mailster-hcaptcha' ),
 				);
 				$current = mailster_option( 'hCaptcha_size' );
 				foreach ( $sizes as $key => $name ) {
-					echo '<option value="' . $key . '" ' . ( selected( $key, $current, false ) ) . '>' . $name . '</option>';
+					echo '<option value="' . esc_attr( $key ) . '" ' . ( selected( $key, $current, false ) ) . '>' . esc_html( $name ) . '</option>';
 				}
 				?>
 			</select></td>
