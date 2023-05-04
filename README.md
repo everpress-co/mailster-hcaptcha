@@ -3,8 +3,8 @@
 Contributors: everpress, xaverb  
 Tags: mailster, form, hcaptcha, recaptcha, captcha, secure  
 Requires at least: 3.8  
-Tested up to: 6.1  
-Stable tag: 1.1  
+Tested up to: 6.2  
+Stable tag: 2.0.0
 License: GPLv2 or later
 
 ## Description
@@ -27,13 +27,19 @@ You may also try [Mailster Cool Captcha for Forms](https://wordpress.org/plugins
 
 ## Changelog
 
+### 2.0.0
+
+- Supports now Mailster Block Forms
+- Supports invisible captcha
+- requires at least Mailster 3.3.3
+
 ### 1.1
 
--   only output script if form has been rendered.
+- only output script if form has been rendered.
 
 ### 1.0
 
--   initial release
+- initial release
 
 ## Additional Info
 
