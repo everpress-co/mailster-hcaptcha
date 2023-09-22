@@ -54,7 +54,7 @@ class MailsterHCaptcha {
 			add_filter( 'mailster_setting_sections', array( &$this, 'settings_tab' ) );
 			add_action( 'mailster_section_tab_hCaptcha', array( &$this, 'settings' ) );
 
-			add_action( 'enqueue_block_editor_assets', array( &$this, 'enqueue_block_editor_assets' ) );
+			add_action( 'enqueue_block_assets', array( &$this, 'enqueue_block_editor_assets' ) );
 		}
 
 		add_filter( 'mailster_form_fields', array( &$this, 'form_fields' ), 10, 3 );
@@ -70,7 +70,7 @@ class MailsterHCaptcha {
 	public function register_post_meta() {
 
 		register_post_meta(
-			'newsletter_form',
+			'mailster-form',
 			'hcaptcha',
 			array(
 				'type'         => 'boolean',
@@ -116,7 +116,7 @@ class MailsterHCaptcha {
 	public function enqueue_block_editor_assets() {
 
 		// only on block forms
-		if ( get_post_type() !== 'newsletter_form' ) {
+		if ( get_post_type() !== 'mailster-form' ) {
 			return;
 		}
 
